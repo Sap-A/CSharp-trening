@@ -4,21 +4,21 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using NUnit.Framework;
 
+
 namespace WebAddressbookTests
 {
     [TestFixture]
-    public class ClientCreationTests : TestBase
-    {
+    public class GroupRemoveTests : TestBase 
+    {       
         [Test]
-        public void ClientCreationTest()
+        public void TheUntitledTestCaseTest()
         {
             OpenHomePage();
             Login(new AccountData("admin", "secret"));
-            InitClientCreation();
-            ClientData group = new ClientData("Иван", "Тестов");
-            FillClientForm(group);
-            SubmitClientCreation();
-            ReternToHomePage();
+            GoToGroupsPage();
+            SelectGroup(1);
+            RemoveGroup();
+            ReternToGroupsPage();
             Logout();
         }
     }
