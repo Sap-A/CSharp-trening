@@ -11,7 +11,7 @@ namespace WebAddressbookTests
     public class GroupRemoveTests : TestBase 
     {       
         [Test]
-        public void TheUntitledTestCaseTest()
+        public void GroupRemoveTest()
         {
             app.Groups.Remove(1);
         }
