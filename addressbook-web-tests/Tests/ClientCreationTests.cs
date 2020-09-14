@@ -12,14 +12,10 @@ namespace WebAddressbookTests
         [Test]
         public void ClientCreationTest()
         {
-            OpenHomePage();
-            Login(new AccountData("admin", "secret"));
-            InitClientCreation();
             ClientData group = new ClientData("Иван", "Тестов");
-            FillClientForm(group);
-            SubmitClientCreation();
-            ReternToHomePage();
-            Logout();
+
+            app.Clients.Create(group);
+                
         }
     }
 }
