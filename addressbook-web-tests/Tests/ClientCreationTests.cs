@@ -12,10 +12,18 @@ namespace WebAddressbookTests
         [Test]
         public void ClientCreationTest()
         {
-            ClientData group = new ClientData("Иван", "Тестов");
+            ClientData contact = new ClientData("Иван", "Тестов");
 
-            app.Clients.Create(group);
+            app.Clients.Create(contact);
                 
+        }
+        [Test]
+        public void EmptyClientCreationTest()
+        {
+            ClientData contact = new ClientData("", "");
+
+            app.Clients.Create(contact);
+
         }
     }
 }
