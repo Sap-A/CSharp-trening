@@ -18,12 +18,13 @@ namespace WebAddressbookTests
 
         public ClientHelper Remove(int v)
         {
-            SelectContact(v);
+            ReternToHomePage();
+            SelectClient(v);
             RemoveClient();
             return this;
         }
 
-        public ClientHelper SelectContact(int index)
+        public ClientHelper SelectClient(int index)
         {
             driver.FindElement(By.XPath("(//input[@name='selected[]'])[" + index + "]")).Click();
             return this;
@@ -31,7 +32,7 @@ namespace WebAddressbookTests
         public ClientHelper RemoveClient()
         {
             driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
-            driver.SwitchTo().Alert().Accept(); ; 
+            driver.SwitchTo().Alert().Accept();            
             return this;
         }
         public ClientHelper InitClientCreation()
@@ -52,10 +53,10 @@ namespace WebAddressbookTests
 
         public ClientHelper Modify(int v, ClientData newCData)
         {
-            SelectContact(v);
+            SelectClient(v);
             InitContactModification();
             FillClientForm(newCData);
-            SubmitContactModification();
+            SubmitClientModification();
             return this;
         }
 
@@ -105,7 +106,7 @@ namespace WebAddressbookTests
             driver.FindElement(By.XPath("(//img[@alt='Edit'])[1]")).Click();
             return this;
         }
-        public ClientHelper SubmitContactModification()
+        public ClientHelper SubmitClientModification()
         {
             driver.FindElement(By.XPath("(//input[@name='update'])[2]")).Click();
             return this;
