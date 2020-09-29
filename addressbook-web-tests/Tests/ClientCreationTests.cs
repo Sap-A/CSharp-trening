@@ -39,5 +39,17 @@ namespace WebAddressbookTests
             app.Clients.Create(client);
                 
         }
+        [Test]
+        public void EmptyClientCreationTest()
+        {
+            ClientData client = new ClientData("", "");            
+            client.Bday = null;
+            client.Bmonth = null;            
+            client.Aday = null;
+            client.Amonth = null;          
+
+            app.Clients.Create(client);
+
+        }
     }
 }
